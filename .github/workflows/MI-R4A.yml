@@ -103,6 +103,7 @@ jobs:
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
+        sudo ls images/ || (echo "!!!!!!!No images found in images/ directory" && exit 1)
         sudo mv -f images/*.bin /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
